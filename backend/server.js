@@ -9,15 +9,24 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+
+
+//Middleware
+app.use(express.static(path.join(__dirname, '../client')))
+
+
+
+
+//END POINTS
 //this is connecting front end stuff to backend on Heruko
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/index.html"))
-})
+// app.get("/", (req, res) => {
+//     res.sendFile(path.join(__dirname, "../client/index.html"))
+// })
 
-app.get('/styles', (req,res) => {
-    res.sendFile(path.join(__dirname, '../client/index.css'))
+// app.get('/styles', (req,res) => {
+//     res.sendFile(path.join(__dirname, '../client/index.css'))
 
-})
+// })
 
 //connects to the Heroku port # otherwise connects to 4005 locally
 const port = process.env.PORT || 4005;
