@@ -2,7 +2,8 @@ const express = require('express');
 const { append } = require('express/lib/response')
 const cors = require('cors')
 
-const path = require('path')
+const path = require('path');
+const { dirname } = require('path');
 
 const app = express()
 app.use(cors())
@@ -11,6 +12,10 @@ app.use(express.json())
 //this is connecting front end stuff to backend on Heruko
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/index.html"))
+})
+
+app.get('/styles', (req,res) => {
+    res.sendFile(path.join(__dirname, '../client/index.css'))
 
 })
 
