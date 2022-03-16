@@ -13,6 +13,7 @@ app.use(express.json())
 
 //Middleware
 app.use(express.static(path.join(__dirname, '../client')))
+app.use(express.static(path.join(__dirname, '../client/index.css')))
 
 
 
