@@ -10,7 +10,7 @@ app.use(express.json())
 
 //this is connecting front end stuff to backend on Heruko
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/index.html'))
+    res.sendFile(path.join(__dirname, "../client/index.html"))
 
 })
 
